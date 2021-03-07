@@ -3,10 +3,10 @@ source "https://rubygems.org"
 gem "jekyll-theme-clean-blog"
 
 group :jekyll_plugins do
-  gem "jekyll-feed", "~> 0.6"
-  gem "jekyll-paginate", "~> 1.1.0"
-  gem "jekyll-sitemap"
-  gem 'jekyll-seo-tag'
+  gem 'jekyll-feed', '~> 0.15.1'
+  gem 'jekyll-paginate', '~> 1.1'
+  gem 'jekyll-sitemap', '~> 1.4'
+  gem 'jekyll-seo-tag', '~> 2.7', '>= 2.7.1'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
