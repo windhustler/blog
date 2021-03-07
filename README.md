@@ -1,5 +1,8 @@
 Original repo: [demo repository](https://github.com/BlackrockDigital/startbootstrap-clean-blog-jekyll)
 
+## Images
+Recommended image dimensions for posts is: 1900x1266
+
 ## Installation & Setup
 
 ### Using RubyGems:
