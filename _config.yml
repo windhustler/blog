@@ -2,8 +2,8 @@ title:              Blockchain Gang
 email:              jkoncura@gmail.com
 description:        An engineer's world
 author:             Josip Končurat
-baseurl:            "/"
-url:                "/"
+baseurl:            ""
+url:                "https://blockchaingang.blog/"
 
 # Social Profiles
 twitter_username:   
