@@ -1,5 +1,6 @@
 ---
 layout: default
+comments: true
 ---
 
 <!-- Page Header -->
@@ -27,6 +28,7 @@ layout: default
       </div>
     </div>
   </header>
+</header>
 
   <div class="container">
     <div class="row">
@@ -47,8 +49,19 @@ layout: default
               Post</span> &rarr;</a>
           {% endif %}
 
+          <br>
+          <br>
+
+          {% if site.disqus.shortname %}
+          {% include disqus_comments.html %}
+          {% endif %}
+
         </div>
 
       </div>
+
     </div>
+
   </div>
+
+
