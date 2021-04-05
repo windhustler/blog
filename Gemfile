@@ -7,6 +7,7 @@ group :jekyll_plugins do
   gem 'jekyll-paginate', '~> 1.1'
   gem 'jekyll-sitemap', '~> 1.4'
   gem 'jekyll-seo-tag', '~> 2.7', '>= 2.7.1'
+  gem 'kramdown-parser-gfm'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
