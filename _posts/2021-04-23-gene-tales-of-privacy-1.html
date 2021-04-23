@@ -1,0 +1,105 @@
+Tales on Privacy in Crypto: an Introduction
+
+Bitcoin -- the distributed, public blockchain.  Digital gold, or
+digital cash, if you will.  Can you do with it all you could do with
+cash?  In particular, can you go and shop to your heart's content
+without any outsider knowing what you bought, from who at what price?
+You can with cash.  How about bitcoin?
+
+In a bitcoin transaction, bitcoin is moved from one bitcoin address to
+another.  Let's say you're a recepient in such a transaction.  Your
+bitcoin address is just a random string of characters unrelated to
+you, a person with an actual name and street address.  Meaning you can
+make a financial transaction without your personal details being
+written down anywhere in it.  However, that doesn't make bitcoin
+actually private in many a use case.  Because, as stated at the start
+of this post, bitcoin is a *public* blockchain.  All records of
+transactions are visible to anyone who knows where to look.  This
+means a couple of things:
+1. If you make your personal data known to the other party involved in
+   a transaction with you, all your transactions can be traced back to
+   you if that other party reveals your data.
+2. Even if you never reveal your data to another party, the way you
+   exchange bitcoin can tell a lot about you.  Analytics over the
+   network topology (the network of transactions) can potentially have
+   your bitcoin address link back to you by analysing who you trade
+   with, who those entities trade with, and so on.  As part of the
+   analysis, the information about real world identities of many of
+   those addresses is used, as not everyone keeps this hidden in the
+   first place.  There are companies that specialize in this kind of
+   analytics and there's plenty money and interest in this -- in
+   other words this is a reality, not a possibility.
+
+For all you folks that have not much interest in anonymity, but are
+still reading for some reason, I'll give you a more tangible reason to
+continue: lack of anonymity in bitcoin makes it /not really fungible/.
+You see, 1BTC that's freshly minted != 1BTC that has a criminal
+transaction history (criminal in the literal sense).  The freshly
+minted coin is worth more to a potential buyer because it comes with
+no history (no *bad* history).  For example, if coins were stolen from
+its owner at some point, it's not impossible that authorities will
+attempt to return those coins to the original owner.  The risk of this
+makes them less attractive to the prospective bitcoin buyer.
+
+So is there a way to use bitcoin anonymously?  Why it's simple of
+course!  You buy it in cash, don't leak your details ever, and trade
+it only with other bitcoin holders that do those first two things as
+well!  Not really useful, right?
+
+Actually, there is a better way - using coin mixers (tumblers).  This
+is the general idea: you transfer your coins to the mixer service, which
+similarly receives coins from other parties, and they are "mixed
+together".  Then, you get the same amount of coins you sent in the
+mixer back, randomly chosen from this large mix of coins -- in other
+words, you don't get the same coins that you put in, but coins with a
+different history.  This isn't a free service, you pay a small
+percentage of the coins that you send to the service.
+
+There's a few problems with this:
+1. It isn't free, you pay for it.
+2. It isn't part of the bitcoin protocol, it's something that must be
+   done manually.
+3. Mixing large sums of money may in some cases be considered illegal,
+   in violation of anti-structuring laws.
+4. You need to trust the bitcoin mixing party that it will really
+   return your coins to you (this is a minor point of concern, it
+   mearly means to be cautious when making your pick).
+
+Attempts have been made to address these issue and make crypto with
+built-in privacy.  I'll give a brief overview of a relatively well
+known one and how it works: Monero.
+
+Monero does three things:
+1. hides the recepient of the transaction
+2. hides the sender of the transaction
+3. hides the amount of Monero spent/received in a transaction
+In short, all the relevant parts of a transaction are hidden from
+everyone who isn't an involved party.
+
+Obviously, a lot goes on under the hood to make this happen.  Ring
+signatures are used to obfuscate the sender of a transaction.  Instead
+of using one key to sign a transaction, a ring of multiple keys is
+used and they are all possible signers of the transaction, therefore
+hiding who exactly is the sender.  Instead of using the real public
+address of your account to receive Monero, a one-time stealth address
+is created for each transaction.  Only the recepient of the
+transaction can know that the transaction was meant for them.  The
+amount is obfuscated by the algorithm "Ring Confidential
+Transactions".
+
+From its design up, Monero is a private blockchain.  Even though it's
+distributed and relies on users running full copies of it and mining
+blocks, the details of transactions are undecipherable to anyone who
+isn't an involved party of a transaction.  The protocol nonetheless
+allows miners to verify the validity of transactions as they add them
+to the blockchain.  For the recepient and sender of Monero, this
+process is transparent.  Using it is similar to using other
+cryptocurrencies: you have a public address for receiving funds, a
+private "spend key" for initiating and viewing sending transaction,
+and a private view key, for viewing incoming transactions.
+
+A more detailed explanation of innerworkings of Monero is out of scope
+of this post.  This is more an illustration of how it can be done, and
+an example that crypto can be private.
+
+Gene A.
