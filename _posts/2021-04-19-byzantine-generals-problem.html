@@ -5,22 +5,40 @@ subtitle: ""
 date: 2021-04-19 10:45:13 -0400
 background: '/img/posts/byzantine.png'
 ---
-<p>Have you ever tried to agree on a time and place to meet with a couple of friends? It can be hard and exhausting, right. Now imagine doing it with ten or ten thousand people, and assume as well some of those people are malicious and want to intentionally misguide others on the location or time of meetup. Yep, that's the problem bitcoin managed to solve.</p>
+<p>Have you ever tried to agree on a time and place to meet with a couple of friends? It can be hard and exhausting, right.
+    Now imagine doing it with ten or ten thousand people, and assume as well some of those people are malicious and want to intentionally
+    misguide others on the location or time of meetup. Yep, that's the problem bitcoin managed to solve.</p>
 
-<p>One way of summarizing the Byzantine Generals Problem is by asking a question. How do multiple entities which are separated by distance and can only communicate through a channel which can't be trusted agree on an action before it's taken?
+<p>One way of summarizing the Byzantine Generals Problem is by asking a question.
+    How do multiple entities which are separated by distance and can only communicate through a channel which can't be trusted agree upon before an action is taken?
     Let's illustrate this by presenting a somewhat simpler system with only two entities. This is commonly referred to as the Two Generals' Problem and at first glance, it seems almost trivial to solve.
 </p>
 
 <h2 class="section-heading">Red And Blue Army Coordination</h2>
 <p>Picture a heavily fortified castle in the middle of a valley. There are two armies, the Red and the Blue Army, standing on the edges of the valley.
-    The battle for the castle can only be won if the two armies attack at the same time. A single army isn't going to make it. They need the combined strength from both sides of the valley to win.</p>
+    The battle for the castle can only be won if the two armies attack at the same time. A single army isn't going to make it.
+    They need the combined strength from both sides of the valley to win. The trick is that the only way they can communicate and coordinate the attack is
+    by sending messengers on a risky path through the valley. How can the Red and Blue Army Generals coordinate to make sure they attack at the same time?
+    Red Army General can just send a message to Blue Army General with a proposed attack time, but the messenger has to pass through the valley,
+    so if they are spotted the message can be easily tampered with. So how does Red Army General know that the other General received the message?
+    The messenger might not have made it. And if that happens, Red Army would attack and that is not sufficient to win the war.
+    To circumvent this problem perhaps they have agreed that Blue Army General has to send an acknowledgment back,
+    and Red Army will only attack if that acknowledgment arrives. But again we run into the same problem, how does the Blue Army know that the Red Army has
+    received the acknowledgment? If the message doesn't go through, Red Army won't attack, Blue Army will and they'll lose.
+    A possible solution si that the Red Army could send another acknowledgment for the acknowledgment. Again the same problem occurs,
+    there is no way to know that message has gotten through. This problem is unsolvable. There is no theoretical way that the two generals can agree
+    that the message has been received and acknowledged.</p>
 
-    <p>The trick is that the only way they can communicate and coordinate the attack is by sending messengers on a risky path through the valley. How can the Red and Blue army generals coordinate to make sure they attack at the same time?
-    Red Army General can just send a message to Blue Army General with a proposed attack time, but the messenger has to pass through the valley, so if they are spotted the message can be easily tampered with. So how does Red Army General know that the other General received the message? The messenger might not have made it. And if that happens, Red Army would attack and that is not sufficient to win the war.
-    To circumvent this problem perhaps they have agreed that Blue Army General has to send an acknowledgment back, and Red Army will only attack if that acknowledgment arrives. But again we run into the same problem, how does the Blue Army know that the Red Army has received the acknowledgment? If the message doesn't go through, Red Army won't attack, Blue Army will and they'll lose. A possible solution is that the Red Army could send another acknowledgment for the acknowledgment. Again the same problem occurs, there is no way to know that message has gotten through. This problem is unsolvable. There is no theoretical way that the two generals can agree that the message has been received and acknowledged.</p>
-
-<p>Byzantine Generals problem deals with the same dilemma, only consisting of three or more entities, or in our illustrated case armies.  To make things more complicated some of the generals might be traitors, intentionally trying to sabotage the attack.
+<p>Byzantine Generals problem deals with the same dilemma, only consisting of three or more entities, or in our illustrated case armies.
+    To make things more complicated some of the generals might be traitors, intentionally trying to sabotage the attack.
     The essence of this problem is that the communication between generals cannot be trusted so they have to have a set of rules they use to validate the truth.
-    A system is said to be Byzantine Fault Tolerant if it can continue operating even if some nodes fail or act maliciously. To develop a global, decentralized peer-to-peer digital cash system, the first cryptocurrency Bitcoin, had to solve this problem. It managed to do so with an outstanding solution, a proof of work algorithm, allowing the system to reach a coherent global view of the system's state.
-    This spurred a whole new field of computer science and game theory research, the consensus mechanisms.
-    I'll be explaining how proof of work works in my future posts but for now just some food for thought. You probably heard about the "carrot and stick" motivational approach that involves offering a "carrot" as a reward for good behavior and a "stick" as a consequence of poor behavior. Well, similarly in a cryptocurrency transaction validation there has to be a system in place, incentivizing new block creation and at the same time highly discouraging cheating.</p>
+    A system is said to be Byzantine Fault Tolerant if it can continue operating even if some nodes fail or act maliciously. To develop a global,
+    decentralized peer-to-peer digital cash system, the first cryptocurrency Bitcoin, had to solve this problem.
+    It managed to do so with an outstanding solution, a proof of work algorithm, allowing the system to reach a coherent global view of the system's state.
+    This spurred a whole new field of computer science and game theory research, the consensus mechanisms.</p>
+
+<p>I'll be explaining how proof of work works in my future posts but for now just some food for thought.
+    You probably heard about the "carrot and stick" motivational approach that involves offering a "carrot" as a reward for good behavior and a "stick"
+    as a consequence of poor behavior. Well, similarly in a cryptocurrency transaction validation there has to be a system in place,
+    incentivizing new block creation and at the same time highly discouraging cheating.
+    Proof of work does that, but with a nice twist, it makes cheating ridiculously stupid and costly. </p>
