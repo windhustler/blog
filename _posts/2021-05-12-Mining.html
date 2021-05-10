@@ -1,0 +1,46 @@
+---
+layout: post
+title: "Mining"
+subtitle: "Proof of Work"
+date: 2021-05-10 10:45:13 -0400
+background: ''
+---
+<p>Like many other technologies, Bitcoin isn't entirely novel.
+    It is a unique and powerful combination of several technologies that existed in the 70s/80s/90s.
+    What's novel in Bitcoin is its architecture and design characteristics that make it work, all the ingredients were
+    there before but no one had combined them in this particular way.</p>
+
+<p>One of the most important components of Bitcoin is the use of cryptographic hash functions,
+    specifically SHA-256. SHA-256 is an algorithm that takes an input of any size and produces a
+    fixed size output which is 256 bits long, as its name implies. A useful analogy for thinking about
+    SHA-256 is that it produces a fingerprint for the data.</p>
+
+<h2 class="section-heading">Some Title</h2>
+<p>When you put some arbitrary data through SHA-256 you don't know what will come out
+    and what does come out looks pretty random. However, it is deterministic, meaning the same piece of data
+    always produces the same result. As hashes can be viewed as fingerprints we can picture them as being 100% unique.
+    One other neat characteristic of SHA-256 is that the output changes dramatically, completely even if the input changes just by one bit.</p>
+
+
+<p>Let's try to invent a system in which someone is required to do some work to find a particular hash value. We'll take any piece of data and put it through SHA-256. What are the chances that the first bit is going to be 0? Just a reminder, a bit has two possible values 0 or 1. Ok, so the answer is pretty straightforward, it's 50%. So half the hashes that are going to come out of this will have the first bit 0.
+    What are the chances that the first 2 bits are 0? It is 25%, right.
+    What are the chances that the first 10 bits are 0? It gets exponentially more difficult to find such a hash as you increase the number of zeroes in the beginning. In Bitcoin, this is called the difficulty target.</p>
+
+<h2 class="section-heading">Some Title</h2>
+<p>
+    You might wonder why do this matters? Well, we've just invented a way to have a task such as hashing with alternating difficulty by adding zeros at the beginning with one important property. No matter how hard it is to find such a hash, it is always trivial for someone else to check whether the solution is correct. </p>
+
+<p>
+    Having all of this in mind, the mining process is the following:
+    Each miner takes the header of the block which is a known set of data and it represents all of the transactions that are in the block, the date and time, and a few other things. Then he adds an arbitrary number called the nonce to this data set, puts it through SHA-256, and checks if it's below the difficulty target, i.e. starts with a particular number of zeroes.</p>
+
+
+<h2 class="section-heading">Some title</h2>
+<p>We already concluded that the important aspect of hashing is randomness, which means to find the target, a miner should brute-force the solution trying quadrillions of possible combinations. There is no other way.</p>
+
+<p>What is the point? A miner has proved to everyone else he's gone through that many combinations to find the target result and no way he could have produced that result without doing the work. Hence, the expression proof-of-work.
+    Making these quadrillion combinations requires specialized hardware and a lot of electricity which incurs a significant financial cost.
+    This serves an important purpose. It underpins the security function because it creates an economic system whereby to participate you have to incur a cost, which is reasonable if there is the possibility of reward.
+    Before starting the hashing, a miner will usually validate all of the transactions, since it would be costly to end up meeting the target but with an invalid transaction, the rest of the network would immediately reject the block.</p>
+
+<p>In this way, the interest of the miner is aligned with validating the consensus rules. The reward for a newly constructed block is a certain amount of bitcoins. The mining process in Bitcoin serves two purposes, to issue new bitcoins into circulation and to secure the system. It's a way of reaching a consensus in a distributed system.</p>
