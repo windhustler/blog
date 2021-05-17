@@ -12,8 +12,8 @@ podcasts on similar topics, you've probably come across the term
 ERC-20 is a standard about such "tokens".  So maybe you're asking
 yourself some of the following questions (and if you are, that's great
 because I'm about to answer them): What are tokens?  How are they
-different from coins?  What are they used for?  What does a 'standard
-for tokens' even mean?  Why is such a standard even necessary or
+different from coins?  What are they used for?  What does a "standard
+for tokens" even mean?  Why is such a standard even necessary or
 useful?
 </p>
 
@@ -28,12 +28,6 @@ have the same value.  This is in opposition to non-fungible tokens,
 which have their own standards, notably ERC-721.
 </p>
 
-<p>
-This article presupposes you know just a bit about Ethereum and smart
-contracts.  Probably it's enough to have a rather vague picture of
-those things.
-</p>
-
 <h3 id="org857ab55">What are tokens and how are they different from coins?</h3>
 <p>
 Coins have their own blockchain, tokens exist on a different
@@ -46,8 +40,8 @@ being created was the incentive to create the standard)
 
 <p>
 From this explanation, one can see the usefulness of tokens.  One does
-not need to implement a new blockchain, attract new users and miners
-necessary for establishing a new cryptocurrency.  Instead, you can use
+not need to implement a new blockchain or attract new users and miners
+necessary for establishing a new cryptocurrency.  Instead, one can use
 an existing platform with its blockchain, miners and users to create
 your cryptocurrency (or rather, your token).
 </p>
@@ -82,13 +76,13 @@ The functions are:
 <ul class="org-ul">
 <li>balanceOf() - returns the token balance of a given Ethereum address</li>
 <li>totalSupply() - returns the total supply of this token</li>
-<li>transfer() - transfer some amount of tokens from the function
+<li>transfer() - transfers some amount of tokens from the function
 caller's address to another address</li>
-<li>transferFrom() - similar to transfer() - it transfers some amount of
+<li>transferFrom() - similar to transfer(), it transfers some amount of
 tokens from the sender's address to the recipient's address</li>
 <li>approve() - authorizes the given address to withdraw a given amount
 of tokens from the function caller's address</li>
-<li>allowance() - related to approve() - returns the remaining amount
+<li>allowance() - related to approve(), it returns the remaining amount
 of tokens the given address is allowed to withdraw from the function
 caller's address</li>
 </ul>
@@ -110,9 +104,10 @@ you're finished and people start using your wallet application,
 suppose you decide to offer that same functionality for a different
 token.  It would be great if you didn't have to rewrite parts of your
 application just for that other token, and then again for a third
-token.  If all those tokens follow a standard, then you don't have to
-rewrite your app - you can use one application for all
-standard-compliant tokens.  Why?  Because they behave in a
+token.  If all those tokens follow a standard, then you don't have to.
+You can use the application for all
+standard-compliant tokens, including those that weren't created at the moment
+you coded your wallet.  Why?  Because they behave in a
 standardized fashion, and you code your wallet with expectations of
 such behavior.
 </p>
@@ -121,8 +116,8 @@ such behavior.
 <p>
 Before we wrap up, I'll give you a few examples of ERC-20 tokens,
 alongside the previously mentioned Dai token.  WBTC (Wrapped Bitcoin)
-is a token that turns (or "wraps") a bitcoin into the Etehreum
-blockchain token to be used on Ethereum.  ZRX is the token of the 0x
+is a token that wraps a bitcoin into the Etehreum
+blockchain, allowing it to be used on Ethereum.  ZRX is the token of the 0x
 decentralized exchange protocol for trading ERC-20 tokens.  BAT, the
 Basic Attention Token is to be used with the Brave browser, where
 users can opt out of advertising, or opt in and be paid for it, in
