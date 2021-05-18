@@ -20,12 +20,12 @@ useful?
 <p>
 Let's start with some nomenclature.  "ERC" stands for "Ethereum
 Request for Comments" and "20" is a number denoting this particular
-ERC, about a certain kind of tokens in Ethereum.  ERC is a term
-reminiscent of RFCs ("Request for Comments"), a similar concept in the
-context of Internet standards.  Also, note that ERC-20 is a standard
+ERC, about a certain kind of tokens in Ethereum.
+Note that ERC-20 is a standard
 for <i>fungible</i> tokens, meaning any two "pieces" of the same token
 have the same value.  This is in opposition to non-fungible tokens,
-which have their own standards, notably ERC-721.
+where each token is unique and of different value from any other token.
+Non-fungible tokens have their own standards, notably ERC-721.
 </p>
 
 <h3 id="org857ab55">What are tokens and how are they different from coins?</h3>
@@ -35,7 +35,7 @@ blockchain that has its own native coin.  In Ethereum, the native coin
 is called 'ether' and tokens are created through smart contracts on
 the Ethereum blockchain.  (Note that tokens were created even before
 the standard ERC-20 was made.  Or rather, the fact that tokens were
-being created was the incentive to create the standard)
+being created was the incentive to create the standard.)
 </p>
 
 <p>
@@ -105,10 +105,10 @@ suppose you decide to offer that same functionality for a different
 token.  It would be great if you didn't have to rewrite parts of your
 application just for that other token, and then again for a third
 token.  If all those tokens follow a standard, then you don't have to.
-You can use the application for all
-standard-compliant tokens, including those that weren't created at the moment
-you coded your wallet.  Why?  Because they behave in a
-standardized fashion, and you code your wallet with expectations of
+You can use just one application for all
+standard-compliant tokens, including those that weren't created at the time
+you developed it.  Why?  Because they behave in a
+standardized fashion, and you develop your wallet with expectations of
 such behavior.
 </p>
 
