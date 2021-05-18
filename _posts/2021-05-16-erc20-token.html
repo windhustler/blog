@@ -1,0 +1,125 @@
+---
+layout: post
+title: ERC-20 token
+subtitle: The ins and outs and why's
+author: Gene A.
+---
+
+<p>
+If you've been reading blockchain-related websites, or listening to
+podcasts on similar topics, you've probably come across the term
+"ERC-20 token" in the context of Ethereum.  And you likely know that
+ERC-20 is a standard about such "tokens".  So maybe you're asking
+yourself some of the following questions (and if you are, that's great
+because I'm about to answer them): What are tokens?  How are they
+different from coins?  What are they used for?  What does a "standard
+for tokens" even mean?  Why is such a standard even necessary or
+useful?
+</p>
+
+<p>
+Let's start with some nomenclature.  "ERC" stands for "Ethereum
+Request for Comments" and "20" is a number denoting this particular
+ERC, about a certain kind of tokens in Ethereum.
+Note that ERC-20 is a standard
+for <i>fungible</i> tokens, meaning any two "pieces" of the same token
+have the same value.  This is in opposition to non-fungible tokens,
+where each token is unique and of different value from any other token.
+Non-fungible tokens have their own standards, notably ERC-721.
+</p>
+
+<h3 id="org857ab55">What are tokens and how are they different from coins?</h3>
+<p>
+Coins have their own blockchain, tokens exist on a different
+blockchain that has its own native coin.  In Ethereum, the native coin
+is called 'ether' and tokens are created through smart contracts on
+the Ethereum blockchain.  (Note that tokens were created even before
+the standard ERC-20 was made.  Or rather, the fact that tokens were
+being created was the incentive to create the standard.)
+</p>
+
+<p>
+From this explanation, one can see the usefulness of tokens.  One does
+not need to implement a new blockchain or attract new users and miners
+necessary for establishing a new cryptocurrency.  Instead, one can use
+an existing platform with its blockchain, miners and users to create
+your cryptocurrency (or rather, your token).
+</p>
+
+<p>
+Let's look at the example of the Dai ERC-20 token.  Dai is a
+stablecoin, the value of which is tied to the value of the US dollar,
+mapped 1:1.  As any ERC-20 token, Dai was created on Ethereum
+blockchain by having its smart contract implemented and then deployed
+on Ethereum (thus tying it to an Ethereum address).  Anyone who wants
+to do anything with the Dai token will go through this smart contract.
+What can you do with a token?  You can e.g. transfer tokens from one
+address to another or check token balance of an Ethereum address, and
+so on (more on this later).  These functionalities were coded into the
+smart contract, along with functionalities that tie the value of the
+Dai token to the value of the US dollar.  The latter of those
+functionalities are Dai-specific and not part of the ERC-20 standard.
+On the other hand, transferring tokens between addresses and checking
+the balance is part of the standard.
+</p>
+
+<h3 id="org5ede870">What does a "standard for tokens" even mean?</h3>
+<p>
+ERC-20 as a standard defines a set of functions that a token (or rather
+its smart contract) must implement.  If the token implements these
+functions, it is ERC-20-compliant.
+</p>
+
+<p>
+The functions are:
+</p>
+<ul class="org-ul">
+<li>balanceOf() - returns the token balance of a given Ethereum address</li>
+<li>totalSupply() - returns the total supply of this token</li>
+<li>transfer() - transfers some amount of tokens from the function
+caller's address to another address</li>
+<li>transferFrom() - similar to transfer(), it transfers some amount of
+tokens from the sender's address to the recipient's address</li>
+<li>approve() - authorizes the given address to withdraw a given amount
+of tokens from the function caller's address</li>
+<li>allowance() - related to approve(), it returns the remaining amount
+of tokens the given address is allowed to withdraw from the function
+caller's address</li>
+</ul>
+
+<p>
+If you've had experience with object oriented programming, it's easy
+to understand it as such: the ERC-20 is the interface that defines a
+set of methods, and a class needs to implement this interface and
+its methods if it wants to be considered ERC-20-compliant.
+</p>
+
+<h3 id="org0e4ac9c">Why is such a standard even necessary or useful?</h3>
+<p>
+Standards are needed for convenience of other applications that can
+interact with tokens, so they could interact with many different
+tokens and not just one.  Suppose there is no standard, and you are
+creating a wallet application only for one particular token.  When
+you're finished and people start using your wallet application,
+suppose you decide to offer that same functionality for a different
+token.  It would be great if you didn't have to rewrite parts of your
+application just for that other token, and then again for a third
+token.  If all those tokens follow a standard, then you don't have to.
+You can use just one application for all
+standard-compliant tokens, including those that weren't created at the time
+you developed it.  Why?  Because they behave in a
+standardized fashion, and you develop your wallet with expectations of
+such behavior.
+</p>
+
+
+<p>
+Before we wrap up, I'll give you a few examples of ERC-20 tokens,
+alongside the previously mentioned Dai token.  WBTC (Wrapped Bitcoin)
+is a token that wraps a bitcoin into the Etehreum
+blockchain, allowing it to be used on Ethereum.  ZRX is the token of the 0x
+decentralized exchange protocol for trading ERC-20 tokens.  BAT, the
+Basic Attention Token is to be used with the Brave browser, where
+users can opt out of advertising, or opt in and be paid for it, in
+BAT.  And many, many more.
+</p>
