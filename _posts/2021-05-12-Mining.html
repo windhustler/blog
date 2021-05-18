@@ -1,7 +1,7 @@
 ---
 layout: post
-title: "Mining"
-subtitle: "Proof of Work"
+title: "Mining Process in Depth"
+subtitle: "Proof of Work - Consensus Mechanism"
 date: 2021-05-10 10:45:13 -0400
 background: ''
 ---
@@ -15,27 +15,30 @@ background: ''
     fixed size output which is 256 bits long, as its name implies. A useful analogy for thinking about
     SHA-256 is that it produces a fingerprint for the data.</p>
 
-<h2 class="section-heading">Some Title</h2>
+<h2 class="section-heading">How does SHA-256 work</h2>
 <p>When you put some arbitrary data through SHA-256 you don't know what will come out
     and what does come out looks pretty random. However, it is deterministic, meaning the same piece of data
     always produces the same result. As hashes can be viewed as fingerprints we can picture them as being 100% unique.
     One other neat characteristic of SHA-256 is that the output changes dramatically, completely even if the input changes just by one bit.</p>
 
-
-<p>Let's try to invent a system in which someone is required to do some work to find a particular hash value. We'll take any piece of data and put it through SHA-256. What are the chances that the first bit is going to be 0? Just a reminder, a bit has two possible values 0 or 1. Ok, so the answer is pretty straightforward, it's 50%. So half the hashes that are going to come out of this will have the first bit 0.
+<p>Let's try to invent a system in which someone is required to do some work to find a particular hash value. We'll take any piece of data and put it through SHA-256.
+    What are the chances that the first bit is going to be 0? Just a reminder, a bit has two possible values 0 or 1. Ok, so the answer is pretty straightforward, it's 50%.
+    So half the hashes that are going to come out of this will have the first bit 0.
     What are the chances that the first 2 bits are 0? It is 25%, right.
-    What are the chances that the first 10 bits are 0? It gets exponentially more difficult to find such a hash as you increase the number of zeroes in the beginning. In Bitcoin, this is called the difficulty target.</p>
+    What are the chances that the first 10 bits are 0? It gets exponentially more difficult to find such a hash as you increase the number of zeroes in the beginning.
 
-<h2 class="section-heading">Some Title</h2>
+<h2 class="section-heading">The mining process</h2>
 <p>
-    You might wonder why do this matters? Well, we've just invented a way to have a task such as hashing with alternating difficulty by adding zeros at the beginning with one important property. No matter how hard it is to find such a hash, it is always trivial for someone else to check whether the solution is correct. </p>
+    You might wonder why this matters?
+    Well, we've just invented a way to have a task such as hashing with alternating difficulty by adding zeros at the beginning.
+    In Bitcoin, this is called the difficulty target, meaning all of the miners compete to find a hash below this target (more details on this down below).
+    When one of the miners is successful other nodes in the network can easily check whether the solution is correct, and if all is fair and square the block is added to the blockchain.
+</p>
 
 <p>
     Having all of this in mind, the mining process is the following:
-    Each miner takes the header of the block which is a known set of data and it represents all of the transactions that are in the block, the date and time, and a few other things. Then he adds an arbitrary number called the nonce to this data set, puts it through SHA-256, and checks if it's below the difficulty target, i.e. starts with a particular number of zeroes.</p>
-
-
-<h2 class="section-heading">Some title</h2>
+    Each miner takes the header of the block which is a known set of data and it represents all of the transactions that are in the block, the date and time, and a few other things.
+    Then he adds an arbitrary number called the nonce to this data set, puts it through SHA-256, and checks if it's below the difficulty target, i.e. starts with a particular number of zeroes.</p>
 <p>We already concluded that the important aspect of hashing is randomness, which means to find the target, a miner should brute-force the solution trying quadrillions of possible combinations. There is no other way.</p>
 
 <p>What is the point? A miner has proved to everyone else he's gone through that many combinations to find the target result and no way he could have produced that result without doing the work. Hence, the expression proof-of-work.
