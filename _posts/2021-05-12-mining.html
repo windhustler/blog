@@ -3,7 +3,7 @@ layout: post
 title: "Mining Process in Depth"
 subtitle: "Proof of Work - Consensus Mechanism"
 date: 2021-05-10 10:45:13 -0400
-background: ''
+background: '/img/posts/mining.png'
 ---
 <p>Like many other technologies, Bitcoin isn't entirely novel.
     It is a unique and powerful combination of several technologies that existed in the 70s/80s/90s.
@@ -15,6 +15,8 @@ background: ''
     fixed size output which is 256 bits long, as its name implies. A useful analogy for thinking about
     SHA-256 is that it produces a fingerprint for the data.</p>
 
+
+
 <h2 class="section-heading">How does SHA-256 work</h2>
 <p>When you put some arbitrary data through SHA-256 you don't know what will come out
     and what does come out looks pretty random. However, it is deterministic, meaning the same piece of data
@@ -25,7 +27,14 @@ background: ''
     What are the chances that the first bit is going to be 0? Just a reminder, a bit has two possible values 0 or 1. Ok, so the answer is pretty straightforward, it's 50%.
     So half the hashes that are going to come out of this will have the first bit 0.
     What are the chances that the first two bits are 0? It is 25%, right.
-    What are the chances that the first 10 bits are 0? It gets exponentially more difficult to find such a hash as you increase the number of zeroes in the beginning.
+    What are the chances that the first 10 bits are 0? It gets exponentially
+    more difficult to find such a hash as you increase the number of zeroes in the beginning.</p>
+
+{% for image in site.static_files %}
+{% if image.path contains 'assets/images/sha256.png' %}
+<img class="img_fluid" src="{{ image.path }}" alt="Gamblers Image">
+{% endif %}
+{% endfor %}
 
 <h2 class="section-heading">The mining process</h2>
 <p>
