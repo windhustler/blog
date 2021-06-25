@@ -1,0 +1,49 @@
+---
+layout: post
+title: "Proof of stake"
+subtitle: ""
+date: 2021-05-10 10:45:13 -0400
+background: '/img/posts/mining.png'
+---
+<p>Before starting up for brevity purposes I'll be referring to the following terms with abbreviations:
+    Proof of Work (PoW)
+    Proof of Stake (PoS)</p>
+
+<p>PoW is a well-known and battle-tested approach for achieving consensus in a decentralized system.
+    I've covered it in detail in my previous post but in short, it is a system in which miners invest the resources, mainly electricity, to validate transactions and ensure security on the network.
+    As the decentralized network grows the amount of electricity expended to maintain the network grows.
+    As of May 2021, the biggest cryptocurrency by market cap and adoption Bitcoin consumes electricity equivalent to the annual energy draw of small countries like Malaysia or Sweden.
+    That's certainly not too much to maintain global payments network but luckily there are other ways to achieve consensus, e.g. by using PoS.
+    Those of you who follow the Ethereum blockchain, the second most popular project in the industry after Bitcoin, probably have heard that it is transitioning from PoW to a PoS system.</p>
+
+<h2 class="section-heading">How does PoS work</h2>
+<p>In this post, I want to explore how PoS works.
+
+    It is a system that purely relies on economic incentives. Users who want to secure the network stake their Ether- native token on the Ethereum network - and become validators.
+    Each of these validators is incentivized to validate transactions by receiving both the block reward and the transaction fees.
+    From a practical standpoint, a validator's task is to stake crypto, stay online 24/7 and confirm transactions when required.
+    To discourage validators from gaming the system and validating fraudulent transactions the proof-of-stake system implements a mechanism called slashing.</p>
+
+<h2 class="section-heading">How does PoS work</h2>
+<p>Slashing can be described in simple terms as punishment for behaviour that goes against the best interests of the network.
+    Its ultimate goal is to make sure that:
+    <ul>
+        <li>All transactions on the network are valid.</li>
+        <li>Network operates without interruptions.</li>
+    </ul>
+    That being said, validators lose their staked Eth for not being online when required to validate transactions and in case they maliciously try to defy the system
+        or it can even occur in case of technical misconfigurations of a node.
+    Exact details of all possible causes of slashing is out of the scope of this article.</p>
+<p>
+    To carry out a 51% attack in a proof-of-stake system, the attacker would have to control 51% of validators which would require owning 51% of all staked Ether. That's a huge amount of capital. To become a validator on the Ethereum network, 32 Ether is required. The cap for maximum Ether staked is 100 million, which would amount to around 3 million validators. Half of the staked Ether would amount to billions of dollars required to attack the system, not to mention the fact that it would deteriorate the value of Ether making it unreasonable for the owner of such an amount of Ether.
+    Let's examine PoS in terms of decentralization by comparison with the PoW consensus.
+    One of the main benefits of blockchain technology is its decentralized nature. This means that no single player controls and exerts enough power on the system. There are many points of failure meaning centralization can occur in several forms:
+    A single user/small group of users hold the majority of native blockchain tokens in circulation,
+    An organization or again a small group has the right to change the underlying blockchain protocol rules,
+    And finally, mining is extremely concentrated.
+    Each of these causes is its topic, but let's briefly examine the last one.
+    When it comes to solving the PoW algorithm, mining cost depends strongly on the electricity cost. As the competition and adoption of Bitcoin grew, large crypto mining companies have been building large mining plants in countries (e.g. China) and regions with low-cost electricity. This phenomenon flushed the average Joe with a few mining machines in his basement to compete. Mining has become an industry requiring technical expertise and large-scale operations. Surely anyone can join a mining pool https://www.investopedia.com/terms/m/mining-pool.asp but each of these pools is a huge point of centralization and a possibility of the biggest pools combined to game the network.
+    PoS is more accessible and inclusive since everyone will be able to stake Ether, but does suffer from a similar type of problems since wealthier groups have a higher chance of earning block rewards. Although the cap for becoming a validator is 32 Eth, an individual can set up numerous nodes.
+    There is no silver bullet when it comes to solving the decentralization puzzle, but PoS seems to offer some advantages.
+
+    To wrap up, PoS offers a solution to some of the weaknesses of a PoW system behind cryptocurrencies like Bitcoin. It essentially eliminates barriers to entry into the validation process. Users no longer have to buy specialized just to get a chance of winning that all elusive block reward. Consequently, PoS requires less computational power than PoW and thus also has less impact on the environment.  </p>
